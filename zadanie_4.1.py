@@ -1,11 +1,12 @@
-
 def polindrom(word_to_check):
-    for i in range(int(len(word_to_check))):
-        if word_to_check[i] == word_to_check[len(word_to_check) - i - 1]:
-            c = bool(word_to_check)
+    symbols_to_ignore = ("$", "!", " ", "?", ":" , ",", "&", "%")
+    for i in word_to_check.lower():
+        if i in symbols_to_ignore:
+            word_to_check = word_to_check.replace(i, "")
         else:
-            c = bool()
-            break
-    return(c)
-
-
+            pass
+    if word_to_check == word_to_check[::-1]:
+        return True
+    else:
+        pass
+        return False
